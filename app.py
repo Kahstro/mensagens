@@ -1,9 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'index'
+    return render_template('index.html')
 
-app.run()
+@app.route('/formulario')
+def formulario():
+    return render_template('formulario.html')
+
+app.run(debug = True)
